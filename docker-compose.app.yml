@@ -14,3 +14,5 @@ services:
       - "traefik.http.routers.appart.entrypoints=websecure"
       - "traefik.http.services.appart.loadbalancer.server.port=5005"
       - "traefik.docker.network=bridge"
+    networks:
+      - bridge
