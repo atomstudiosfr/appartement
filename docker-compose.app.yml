@@ -3,6 +3,7 @@ services:
   appartement_chambray_les_tours:
     restart: always
     container_name: appartement_chambray_les_tours
+    network_mode: bridge
     build: ./app
     ports:
       - "5005:5005"
