@@ -13,3 +13,11 @@ services:
       - "traefik.http.routers.appart.rule=Host(`mosaik.${DOMAIN_NAME:-localhost}`)"
       - "traefik.http.routers.appart.entrypoints=websecure"
       - "traefik.http.services.appart.loadbalancer.server.port=5005"
+    networks:
+      - traefik
+
+
+networks:
+  traefik:
+    external:
+      name: atom_traefik
