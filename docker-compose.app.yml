@@ -3,7 +3,7 @@ services:
   appartement_chambray_les_tours:
     restart: always
     container_name: appartement_chambray_les_tours
-    build: ./appartement
+    build: ./app
     ports:
       - "5005:5005"
     expose:
