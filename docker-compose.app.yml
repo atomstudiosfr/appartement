@@ -18,6 +18,7 @@ services:
 
 
 networks:
-  traefik:
-    external:
-      name: atom_traefik
+  traefik-network:
+    name: traefik-public
+    driver: overlay
+    external: true
