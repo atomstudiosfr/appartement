@@ -1,7 +1,7 @@
 ### STAGE 1: Base ###
 FROM node:16-alpine AS base
 WORKDIR /usr/src/app
-COPY app/package.json package-lock.json ./
+COPY app/package.json app/package-lock.json ./
 RUN npm ci --legacy-peer-deps
 COPY app .
 RUN npm run build
