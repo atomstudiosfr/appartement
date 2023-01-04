@@ -25,3 +25,5 @@ jobs:
           tags: |
             ghcr.io/atomstudiosfr/appartement:latest
             ghcr.io/atomstudiosfr/appartement:${{ github.sha }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
