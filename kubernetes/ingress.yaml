@@ -1,0 +1,25 @@
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: ing-traefik-tls
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`mosaik.atomdev.fr`)
+      kind: Rule
+      services:
+        - name: appartement
+          port: 80
+  tls:
+    certResolver: letsencrypt
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: https-redirect
+spec:
+  redirectScheme:
+    scheme: https
+    permanent: true
