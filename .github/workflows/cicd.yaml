@@ -22,7 +22,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: ghcr.io/atomstudiosfr/appartement:latest, ghcr.io/atomstudiosfr/appartement:${{ github.sha }}
+          tags: ghcr.io/atomstudiosfr/appartement:${{ github.sha }},ghcr.io/atomstudiosfr/appartement:latest
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
