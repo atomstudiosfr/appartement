@@ -50,5 +50,6 @@ jobs:
           manifests: |
             kubernetes/ingress.yaml
             kubernetes/service.yaml
+            kubernetes/deployment.yaml
           images: |
             ghcr.io/atomstudiosfr/appartement:${{ github.sha }}

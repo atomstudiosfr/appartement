@@ -13,19 +13,3 @@ spec:
   selector:
     app: appartement
   type: ClusterIP
-
----
-apiVersion: v1
-kind: Pod
-metadata:
-  name: appartement
-  namespace: default
-  labels:
-    app: appartement
-
-spec:
-  containers:
-    - name: appartement
-      image: ghcr.io/atomstudiosfr/appartement:latest
-  imagePullSecrets:
-    - name: github-container-registry

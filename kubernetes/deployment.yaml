@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: appartement
+  labels:
+    app: appartement
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: appartement
+  template:
+    metadata:
+      labels:
+        app: appartement
+    spec:
+      containers:
+        - name: appartement
+          image: ghcr.io/atomstudiosfr/appartement:latest
+          ports:
+            - containerPort: 80
+      imagePullSecrets:
+        - name: github-container-registry

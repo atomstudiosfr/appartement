@@ -2,7 +2,7 @@
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
-  name: ing-traefik-tls
+  name: appartement
 spec:
   entryPoints:
     - websecure
@@ -14,12 +14,3 @@ spec:
           port: 80
   tls:
     certResolver: letsencrypt
----
-apiVersion: traefik.containo.us/v1alpha1
-kind: Middleware
-metadata:
-  name: https-redirect
-spec:
-  redirectScheme:
-    scheme: https
-    permanent: true
