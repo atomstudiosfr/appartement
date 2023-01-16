@@ -2,9 +2,12 @@
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
-  name: appartement
+  name: whoami
+  annotations:
+    kubernetes.io/ingress.class: traefik
 spec:
   entryPoints:
+    - web
     - websecure
   routes:
     - match: Host(`mosaik.atomdev.fr`)
@@ -13,4 +16,16 @@ spec:
         - name: appartement
           port: 80
   tls:
-    certResolver: letsencrypt
+    secretName: mosaik-tls
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: mosaik-tls
+spec:
+  dnsNames:
+    - mosaik.atomdev.fr
+  secretName: mosaik-tls
+  issuerRef:
+    name: letsencrypt
+    kind: ClusterIssuer
