@@ -16,7 +16,7 @@ spec:
         app: mosaik
     spec:
       containers:
-        - name: appartement
+        - name: mosaik
           image: ghcr.io/atomstudiosfr/appartement:latest
           ports:
             - containerPort: 80
