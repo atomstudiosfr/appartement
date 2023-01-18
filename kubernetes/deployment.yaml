@@ -1,18 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: appartement
+  name: mosaik
+  namespace: app
   labels:
-    app: appartement
+    app: mosaik
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: appartement
+      app: mosaik
   template:
     metadata:
       labels:
-        app: appartement
+        app: mosaik
     spec:
       containers:
         - name: appartement

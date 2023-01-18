@@ -1,14 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: appartement
-  namespace: default
-
+  name: mosaik
+  namespace: app
 spec:
   ports:
     - port: 80
       protocol: TCP
       targetPort: 80
   selector:
-    app: appartement
+    app: mosaik
   type: ClusterIP

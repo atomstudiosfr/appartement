@@ -2,7 +2,8 @@
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
-  name: whoami
+  name: mosaik
+  namespace: app
   annotations:
     kubernetes.io/ingress.class: traefik
 spec:
@@ -22,6 +23,7 @@ apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: mosaik-tls
+  namespace: app
 spec:
   dnsNames:
     - mosaik.atomdev.fr
